@@ -43,11 +43,28 @@
               <h4>Google Drive Link</h4>
               <h5>Paste your Google Drive File link below</h5>
               <div class="generate-container">
-                <input type="text" placeholder="Google Drive Link" />
+                <input type="text" placeholder="Google Drive Link" id="google-drive-link"/>
                 <button class="btn-generate">
                   Generate Direct Download Link
                 </button>
                 <h5>Direct Download link</h5>
+                <div class="textarea-container">
+                  <textarea readonly id="downloaded-link"></textarea>
+                  <button>copy</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Embed Audio -->
+            <div class="embed-audio-container">
+              <i class="fas fa-headphones"></i>
+              <h4>Embeded Audio</h4>
+              <h5>
+                If your Link was an Audio, use this code snippet to embed it on
+                a web page
+              </h5>
+              <div class="generate-container">
+                <h5>Audio Embed link</h5>
                 <div class="textarea-container">
                   <textarea readonly></textarea>
                   <button>copy</button>
@@ -56,7 +73,21 @@
             </div>
 
             <!-- Embed Audio -->
-            <div class="embed-audio-container">embed audio</div>
+            <div class="embed-video-container">
+              <i class="fas fa-video"></i>
+              <h4>Embeded Audio</h4>
+              <h5>
+                If your Link was a Video/Document, use this code snippet to
+                embed it on a web page
+              </h5>
+              <div class="generate-container">
+                <h5>Video/Document Embed link</h5>
+                <div class="textarea-container">
+                  <textarea readonly></textarea>
+                  <button>copy</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
