@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/ed5471956f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="instruction-container">
+        <h4>Instructions</h4>
+        <p>Follow the instructions below to get your Google Drive file Link</p>
+        <ol>
+          <li>Open <span>Google Drive</span></li>
+          <li>Right click on a file.</li>
+          <li>Select "Get Link" and click "Copy link"</li>
+          <li>Paste the link here and click "Generate Direct Link" button</li>
+        </ol>
+      </div>
+      <div class="google-container">
+        <div class="style-container">
+          <h4>Google Direct Download Link Generator</h4>
+          <div class="btn-container">
+            <button class="paste">
+              <i class="fas fa-paste"></i>Paste Link
+            </button>
+            <button class="audio">
+              <i class="fas fa-headphones"></i>Embed Audio
+            </button>
+            <button class="video">
+              <i class="fas fa-photo-video"></i>Embed Video Docs
+            </button>
+          </div>
+          <div class="google-drive-container">
+            <!-- Google Paste Link -->
+            <div class="drive-style-container">
+              <i class="fas fa-download"></i>
+              <h4>Google Drive Link</h4>
+              <h5>Paste your Google Drive File link below</h5>
+              <div class="generate-container">
+                <input type="text" placeholder="Google Drive Link" />
+                <button class="btn-generate">
+                  Generate Direct Download Link
+                </button>
+                <h5>Direct Download link</h5>
+                <div class="textarea-container">
+                  <textarea readonly></textarea>
+                  <button>copy</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Embed Audio -->
+            <div class="embed-audio-container">embed audio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

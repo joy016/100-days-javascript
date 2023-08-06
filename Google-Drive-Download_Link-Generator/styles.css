@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+  --white: #fff;
+  --black: #1c2b2d;
+  --blue: #31326f;
+  --light-blue: #005490;
+  --color-primary: #9d0191;
+  --color-sec: #db6400;
+  --grey: #eee;
+  --dark-grey: #222831;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--black);
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+}
+
+.instruction-container {
+  padding: 30px;
+  height: 100vh;
+  width: 30%;
+}
+
+.instruction-container h4 {
+  color: var(--color-sec);
+  font-size: 2.2rem;
+}
+
+.instruction-container p {
+  color: var(--white);
+  padding: 2rem 0;
+  text-decoration: underline;
+}
+
+.instruction-container ol li {
+  color: var(--white);
+  font-size: 1.5rem;
+}
+.instruction-container ol li span {
+  color: var(--color-sec);
+}
+
+.google-container {
+  background-color: var(--white);
+  width: 80%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.style-container {
+  width: 70%;
+  text-align: center;
+}
+
+.style-container h4 {
+  color: var(--color-primary);
+  font-size: 2.5rem;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  gap: 2px;
+}
+
+.btn-container button {
+  flex: 1;
+  padding: 10px 10px;
+  border-style: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  background-color: var(--grey);
+}
+
+.btn-container button:hover {
+  background-color: var(--color-primary);
+  color: var(--white);
+}
+
+.btn-container button i {
+  margin-right: 5px;
+}
+
+.google-drive-container {
+  /* height: 60vh; */
+  border-color: #31326f;
+  border-style: solid;
+  margin-top: 5px;
+  padding: 50px 20px;
+}
+
+.drive-style-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.google-drive-container i {
+  border-style: solid;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.5rem;
+  color: var(--color-sec);
+}
+.google-drive-container h5 {
+  font-size: 1.2rem;
+  padding: 10px 0;
+  font-weight: 600;
+}
+
+.generate-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.google-drive-container input {
+  width: auto;
+  background-color: var(--grey);
+  padding: 10px;
+  outline: none;
+  border-style: none none solid;
+  margin-bottom: 10px;
+}
+.btn-generate {
+  background-color: var(--color-sec);
+  padding: 15px 0;
+  color: var(--white);
+  border-style: none;
+  border-radius: 3px;
+}
+
+.btn-generate:hover {
+  color: var(--black);
+  background-color: #fd8d14;
+  transition: 0.3s;
+}
+
+.textarea-container {
+  position: relative;
+}
+.textarea-container textarea {
+  width: 100%;
+  height: 12rem;
+  box-sizing: border-box;
+}
+.textarea-container button {
+  position: absolute;
+  bottom: 3px;
+  right: 0;
+  background-color: var(--color-primary);
+  padding: 5px;
+  color: var(--white);
+  border-style: none;
+}
+.textarea-container button:hover {
+  background-color: #e966a0;
+  transition: 0.3s;
+}
+
+.embed-audio-container {
+  display: none;
+}
