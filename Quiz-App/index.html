@@ -12,21 +12,40 @@
   </head>
   <body>
     <div class="container">
+      <button class="btn-start">Start Quiz</button>
       <div class="quiz-container">
         <h1>Javascript Quiz App</h1>
-        <div class="timer-cointainer">
-          <p>Question 1 of 5</p>
-          <span>TIME: 9 : 55</span>
-        </div>
+        <div class="quiz-box-container">
+          <div class="timer-cointainer">
+            <p id="count-of-question"></p>
+            <span id="timer"></span>
+          </div>
 
-        <hr />
-        <p class="question">Hyper Text Markup Language Stands For?</p>
-        <hr class="question-divider" />
-        <div class="buttons">
-          <button class="btn-style">A. JQuery</button>
-          <button class="btn-style">B. XHTML</button>
-          <button class="btn-style">C. CSS</button>
-          <button class="btn-style">D. HTML</button>
+          <hr />
+          <p class="question"></p>
+          <hr class="question-divider" />
+          <div class="buttons">
+            <button class="btn-style">
+              A.
+              <p class="choices"></p>
+            </button>
+            <button class="btn-style">
+              B.
+              <p class="choices"></p>
+            </button>
+            <button class="btn-style">
+              C.
+              <p class="choices"></p>
+            </button>
+            <button class="btn-style">
+              D.
+              <p class="choices"></p>
+            </button>
+          </div>
+        </div>
+        <div class="score-container">
+          <p id="score">Your score is x out of y</p>
+          <button id="btn-retake">Retake Quiz</button>
         </div>
 
         <hr class="bottom-line" />

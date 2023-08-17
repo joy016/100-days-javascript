@@ -38,7 +38,21 @@ body {
   height: 100vh;
 }
 
+.btn-start {
+  padding: 20px;
+  font-size: 2em;
+  border-radius: 5px;
+  border-style: none;
+  font-weight: bold;
+}
+
+.btn-start:hover {
+  background-color: var(--color-primary);
+  color: var(--white);
+}
+
 .quiz-container {
+  display: none;
   width: 70%;
   padding: 20px 30px;
   height: auto;
@@ -100,12 +114,47 @@ body {
 }
 
 .btn-style {
+  display: flex;
   text-align: left;
   padding: 10px;
   margin-bottom: 10px;
   border: solid 1px var(--color-primary);
   border-radius: 5px;
   background-color: var(--grey);
+}
+
+.btn-style:hover {
+  background-color: var(--color-primary);
+  color: var(--white);
+}
+.btn-style:active {
+  background-color: var(--color-sec);
+}
+
+.score-container {
+  margin: 0 auto;
+  padding: 0 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.score-container p {
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+.score-container button {
+  padding: 15px 30px;
+  background-color: var(--color-primary);
+  color: var(--white);
+  border-style: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.score-container button:active {
+  background-color: var(--color-sec);
 }
 
 .bottom-line {
