@@ -156,6 +156,14 @@ body {
 .score-container button:active {
   background-color: var(--color-sec);
 }
+.congrats-container {
+  text-align: center;
+  display: none;
+}
+.congrats-container p {
+  font-size: 2em;
+  padding: 30px 10px;
+}
 
 .bottom-line {
   margin-top: 20px;

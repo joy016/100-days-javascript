@@ -7,8 +7,12 @@ const buttons = document.querySelectorAll('.btn-style');
 const questionCount = document.getElementById('count-of-question');
 const quizBoxContainer = document.querySelector('.quiz-box-container');
 const scoreContainer = document.querySelector('.score-container');
+const congratsContainer = document.querySelector('.congrats-container');
+const retakeButton = document.getElementById('btn-retake');
 const score = document.getElementById('score');
-let userChoices = [];
+let userChoices = [null];
+let scores = 0;
+let counter = 0;
 
 const targetTime = new Date().getTime() + 10 * 60 * 1000;
 let currentQuestionIndex = 0;
@@ -52,18 +56,51 @@ startButton.addEventListener('click', () => {
 
 buttons.forEach((button, index) => {
   button.addEventListener('click', () => {
+    const selectedOption = choices[index].textContent;
+    userChoices[currentQuestionIndex] = selectedOption;
     if (currentQuestionIndex < quizData.length - 1) {
       currentQuestionIndex++;
-      7;
-      const selectedOption = choices[index].textContent;
-      userChoices[currentQuestionIndex] = selectedOption;
-
       displayQuestion();
     } else {
-      alert('quiz completed');
       calculateScore();
       quizBoxContainer.style.display = 'none';
-      scoreContainer.style.display = 'flex';
+      score.innerHTML = `Your score is ${scores} out of 5`;
+      if (scores < 4) {
+        scoreContainer.style.display = 'flex';
+      } else {
+        congratsContainer.style.display = 'block';
+        const duration = 15 * 1000,
+          animationEnd = Date.now() + duration,
+          defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+        function randomInRange(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+
+        const interval = setInterval(function () {
+          const timeLeft = animationEnd - Date.now();
+
+          if (timeLeft <= 0) {
+            return clearInterval(interval);
+          }
+
+          const particleCount = 50 * (timeLeft / duration);
+
+          // since particles fall down, start a bit higher than random
+          confetti(
+            Object.assign({}, defaults, {
+              particleCount,
+              origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+            })
+          );
+          confetti(
+            Object.assign({}, defaults, {
+              particleCount,
+              origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+            })
+          );
+        }, 250);
+      }
     }
   });
 });
@@ -76,7 +113,7 @@ function shuffleArrayOfOptions(array) {
 }
 
 function displayQuestion() {
-  let counter = currentQuestionIndex + 1;
+  counter = currentQuestionIndex + 1;
   const questionData = quizData[currentQuestionIndex];
   shuffleArrayOfOptions(questionData.options);
   question.innerHTML = questionData.question;
@@ -89,17 +126,24 @@ function displayQuestion() {
   });
 }
 
-// to be continue
-
 function calculateScore() {
-  let score = 0;
   for (let i = 0; i < quizData.length; i++) {
-    if (userChoices[i] === quizData[i].answer) {
-      score++;
+    if (userChoices.includes(quizData[i].answer)) {
+      scores++;
     }
   }
-  console.log(score);
+  console.log(scores);
 }
+
+retakeButton.addEventListener('click', () => {
+  userChoices = [null];
+  scores = 0;
+  currentQuestionIndex = 0;
+  counter = 0;
+  scoreContainer.style.display = 'none';
+  quizBoxContainer.style.display = 'block';
+  displayQuestion();
+});
 
 const interval = setInterval(function () {
   const currentTime = new Date().getTime();
